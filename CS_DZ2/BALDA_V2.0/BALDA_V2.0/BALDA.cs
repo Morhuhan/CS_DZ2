@@ -86,8 +86,16 @@ namespace BALDA_V2._0
             player2.playerScoreBox = player2ScoreBox;
             player2.playerTurnBox = player2TurnBox;
 
-            string[] tempDictionary = File.ReadAllLines(filePath);
-            dictionary = tempDictionary.Select(word => word.ToUpper()).ToList();
+            try
+            {
+                string[] tempDictionary = File.ReadAllLines(filePath);
+                dictionary = tempDictionary.Select(word => word.ToUpper()).ToList();
+            }
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show($"Ошибка: Файл не найден. {ex.Message}");
+                Environment.Exit(1);
+            }
 
             // Создаем слово в центре
             GenerateStartWord();
