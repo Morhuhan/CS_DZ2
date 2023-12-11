@@ -170,7 +170,7 @@ namespace BALDA_V2._0
         string startWord;
 
         // Словарь
-        string filePath = "C:\\Users\\radio\\Labs\\C#\\CS_DZ2\\BALDA_V2.0\\BALDA_V2.0\\obj\\Debug\\Словарь.txt";
+        string filePath = "Словарь.txt";
         List<string> dictionary;
 
         private void ButtonsInit()
